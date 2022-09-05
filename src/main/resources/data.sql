@@ -1,0 +1,4 @@
+-- expects the csv on the classpath (src/main/resources)
+INSERT INTO YOUTUBERS (RANK, USERNAME, YOUTUBE_URL, NAME, CATEGORY, SUBSCRIBERS, AUDIENCE_COUNTRY, AVG_VIEWS, AVG_LIKES, AVG_COMMENTS)
+SELECT *
+FROM CSVREAD('classpath:top_1000_youtubers.csv');
