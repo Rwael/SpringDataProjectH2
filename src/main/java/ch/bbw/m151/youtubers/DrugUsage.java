@@ -2,7 +2,7 @@ package ch.bbw.m151.youtubers;
 
 import javax.persistence.*;
 
-@Entity(name = "youtubers") public class YoutuberEntity {
+@Entity(name = "DrugUsage") public class DrugUsage {
     @Id
     public Long rank;
 
@@ -33,5 +33,5 @@ import javax.persistence.*;
     @Column
     public Long avgComments;
 
-    public YoutuberEntity(){}
+    public DrugUsage(){}
 }

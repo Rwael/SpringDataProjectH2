@@ -1,4 +1,9 @@
 -- expects the csv on the classpath (src/main/resources)
-INSERT INTO YOUTUBERS (RANK, USERNAME, YOUTUBE_URL, NAME, CATEGORY, SUBSCRIBERS, AUDIENCE_COUNTRY, AVG_VIEWS, AVG_LIKES, AVG_COMMENTS)
+INSERT INTO DrugUsage (ID,Age,Gender,Education,Country,Ethnicity,Nscore,Escore,Oscore,AScore,Cscore,Impulsive,SS,Alcohol,Amphet,Amyl,Benzos,Caff,Cannabis,Choc,Coke,Crack,Ecstasy,Heroin,Ketamine,Legalh,LSD,Meth,Mushrooms,Nicotine,Semer,VSA)
 SELECT *
-FROM CSVREAD('classpath:top_1000_youtubers.csv');
+FROM CSVREAD('classpath:Drug_Consumption.csv');
+
+INSERT INTO COUNTRY (name)
+SELECT DISTINCT Country
+FROM CSVREAD('classpath:Drug_Consumption.csv');
+WHERE Country is not NULL;
