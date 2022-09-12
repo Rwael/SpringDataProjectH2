@@ -7,11 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import java.awt.print.Pageable;
 import java.util.List;
 
-public interface DrugRepository extends JpaRepository<DrugUsage, Integer> {
-    List<DrugUsage> findAllByAudienceCountryIs(String country);
+public interface DrugRepository extends JpaRepository<DrugUsageEntity, Integer> {
+    List<DrugUsageEntity> findAllByCountryIs(String country);
 
-    @Query("SELECT DISTINCT audienceCountry FROM youtubers WHERE audienceCountry IS NOT NULL")
-    List<String> distinctAudienceCountries();
+    @Query("SELECT DISTINCT Country FROM DrugUsages WHERE Country IS NOT NULL")
+    List<String> distinctCountries();
 
-    Page<DrugUsage> findAllbyUsernameContainsOrderByUsername(String contains, Pageable pageable);
+   // Page<DrugUsageEntity> findAllbyUsernameContainsOrderByUsername(String contains, Pageable pageable);
 }

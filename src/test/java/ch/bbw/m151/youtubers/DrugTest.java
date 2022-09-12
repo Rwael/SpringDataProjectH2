@@ -8,28 +8,28 @@ import org.springframework.util.Assert;
 import java.util.Objects;
 
 @SpringBootTest
-public class YTTest {
+public class DrugTest {
 
     @Autowired
-    YTRepository ytRepository;
+    DrugRepository drugRepository;
 
     @Test
     void whatDoIHave(){
-        var n = ytRepository.count();
-        assert n == 1000;
+        var n = drugRepository.count();
+        assert n == 1888;
     }
 
     @Test
     void selectCountry(){
-        var n = ytRepository.findAllByAudienceCountryIs("India");
-        ytRepository.findById(12).get().username = "2";
-        var b = ytRepository.findById(12).get();
-        Assert.isTrue(Objects.equals(b.username, "2"));
+        var n = drugRepository.findAllByCountryIs("India");
+        drugRepository.findById(12).get().Gender = "2";
+        var b = drugRepository.findById(12).get();
+        Assert.isTrue(Objects.equals(b.Gender, "2"));
     }
 
     @Test
     void distinctCountries(){
-        var n = ytRepository.distinctAudienceCountries();
+        var n = drugRepository.distinctCountries();
         Assert.isTrue(n.size() > 0);
     }
 }
