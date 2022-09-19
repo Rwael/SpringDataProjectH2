@@ -1,10 +1,13 @@
 package ch.bbw.m151.youtubers;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 
+@DynamicUpdate
 @Entity(name = "Drugusages") public class DrugUsageEntity {
     @Id
-    public Long ID;
+    public int ID;
 
     @Column
     public String age;
