@@ -5,5 +5,5 @@ import javax.persistence.Id;
 
 @Entity(name = "Countries") public class CountryEntity {
     @Id
-    public String Country;
+    public String country;
 }

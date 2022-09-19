@@ -2,43 +2,46 @@ package ch.bbw.m151.youtubers;
 
 import javax.persistence.*;
 
-@Entity(name = "DrugUsages") public class DrugUsageEntity {
+@Entity(name = "Drugusages") public class DrugUsageEntity {
     @Id
     public Long ID;
 
     @Column
-    public String Age;
+    public String age;
 
     @Column
-    public String Gender;
+    public String gender;
 
     @Column
-    public String Education;
+    public String education;
 
-    @JoinTable(name="Countries")
+    @Column
+    public String ethnicity;
+
+    @JoinColumn(name="country")
     @ManyToOne
-    public CountryEntity Country;
+    public CountryEntity country;
 
     @Column(name="NScore")
-    public double Neuroticism;
+    public double neuroticism;
 
     @Column(name="CScore")
-    public double Conscientiousness;
+    public double conscientiousness;
 
     @Column(name="EScore")
-    public double Extraversion;
+    public double extraversion;
 
     @Column(name="OScore")
-    public double Openness;
+    public double openness;
 
     @Column(name="AScore")
-    public double Agreeableness;
+    public double agreeableness;
 
     @Column(name="Impulsive")
-    public double Impulsiveness;
+    public double impulsiveness;
 
     @Column(name="SS")
-    public double Craziness;
+    public double craziness;
 
     public DrugUsageEntity(){}
 }
