@@ -38,7 +38,7 @@ public class DrugTest {
 
     @Test
     void searchCountry(){
-        var n = drugRepository.findAllByCountryIs(new CountryEntity("UK"));
+        var n = drugRepository.AllByCountryIs("UK");
         Assert.isTrue(n.size() > 0);
     }
 
@@ -46,5 +46,18 @@ public class DrugTest {
     void Genders(){
         var n = drugRepository.findAllByGenderIs("M", Pageable.ofSize(2));
         Assert.isTrue(n.getContent().size() == 2);
+    }
+
+    @Test
+    void GetAll(){
+        //var n = drugRepository.GetAllDrugUsageEntity();
+        //Assert.isTrue(n.size() == 1884);
+    }
+
+    @Test
+    void deleteById(){
+        drugRepository.deleteDrugUsageEntityByID(2);
+        var n = drugRepository.findById(2);
+        Assert.isTrue(n.isEmpty());
     }
 }
