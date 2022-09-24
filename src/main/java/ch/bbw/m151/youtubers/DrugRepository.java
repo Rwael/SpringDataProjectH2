@@ -18,6 +18,6 @@ public interface DrugRepository extends JpaRepository<DrugUsageEntity, Integer> 
     Page<DrugUsageEntity> findAllByGenderIs(String gender, Pageable pageable);
 
     void deleteByID(int id);
-    @Query("SELECT e FROM Drugusages e LEFT JOIN Countries On Countries.country = Drugusages .country")
-    List<DrugUsageEntity> GetallDrugUsageEntity();
+//    @Query("SELECT e FROM Drugusages e LEFT JOIN Countries On Countries.country = Drugusages .country")
+  //  List<DrugUsageEntity> GetallDrugUsageEntity();
 }
