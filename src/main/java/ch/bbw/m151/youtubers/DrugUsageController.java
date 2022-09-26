@@ -24,7 +24,7 @@ public class DrugUsageController {
     }
     @GetMapping("/DeleteById/{id}")
     public void DeleteById(@PathVariable int id){
-        drugRepository.deleteDrugUsageEntityByID(id);
+       drugRepository.deleteDrugUsageEntityByID(id);
     }
     @GetMapping("/UsagesByCountry/{country}")
     public List<DrugUsageEntity> GetDrugUsageByCountry(@PathVariable String country){
@@ -36,9 +36,10 @@ public class DrugUsageController {
         var drugentitys = drugRepository.findAllByGenderIs(gender,pageable);
         return drugentitys;
     }
-    //@GetMapping
-    //public List<DrugUsageEntity> GetAlldrugusagesEntity(){
-      //  var drugusageentity = drugRepository.GetallDrugUsageEntity();
-        //return drugusageentity;
-    //}
+
+    @GetMapping("/DrugUsage")
+    public List<DrugUsageEntity> GetAlldrugusagesEntity(){
+       var drugusageentity = drugRepository.GetallDrugUsageEntity();
+       return drugusageentity;
+    }
 }
